@@ -1,17 +1,18 @@
-const http = require('http')
+const path = require('path')
 const express = require('express')
 const server = express()
 
 const PORT_MAIN = 8080
 
 server.get('/', (req, res) => {
-    res.status(200).send('Hello server')
+    res.sendFile(path.join(__dirname+'/index.html'))
 })
 
 server.listen(PORT_MAIN, () => {
     console.log('Server is running on PORT:', PORT_MAIN)
 })
 
+// const http = require('http') - USING HTTP LIBRARY
 // let server = http.createServer((req, res) => {
 //     res.writeHead(200, { 'Content-type': 'text/plain'})
 //     res.end('Server running...')
