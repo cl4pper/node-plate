@@ -1,0 +1,15 @@
+{
+  "name": "mini-server",
+  "version": "1.0.0",
+  "description": "A mini server to run simple pages",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js"
+  },
+  "author": "cl4pper@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
