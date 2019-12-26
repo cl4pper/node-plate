@@ -1,10 +1,16 @@
 const express = require('express')
 const router = express.Router()
+const Library = require('../models/book')
 
 // GET ALL
-router.get('/library', (req, res) => {
+router.get('/library', async (req, res) => {
     //  res.sendFile(path.join(__dirname+'/index.html'))
-    res.send('GETTING ALL BOOKS')
+    try {
+        const library = await Library.find()
+        res.send(library)
+    } catch (err) {
+        res.status(500).json({ message: err })
+    }
 })
 
 // GET ONE
