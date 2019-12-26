@@ -3,11 +3,10 @@ const express = require('express')
 const server = express()
 const mongoose = require('mongoose')
 
+// MONGODB CONFIG. ---------------------------- START
 mongoose.connect('mongodb://localhost/library', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to mongodb...'))
     .catch(err => console.error('NOT connect to mongobd!', err))
-
-const PORT_MAIN = 8080
 
 const bookSchema = new mongoose.Schema({
     title: String,
@@ -29,7 +28,6 @@ async function createBook () {
     })
 
     const result = await book.save()
-    console.log(result)
 }
 
 // METHOD TO GET DATA FROM DATABASE
@@ -37,13 +35,17 @@ async function getBooks () {
     const result = await Book.find()
         .limit(1)
         .sort({ title: 1 })
+        // .count() -> to count items under filter properties
         .select({ title: 1, tags: 1 })
-    console.log(result)
 }
 
 // CALLING MTHODS TO INTERACT WITH DATABASE
 // createBook()
 getBooks()
+
+// MONGODB CONFIG. ---------------------------- END
+
+const PORT_MAIN = 3000
 
 server.get('/', (req, res) => {
     res.sendFile(path.join(__dirname+'/index.html'))
