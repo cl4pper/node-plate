@@ -3,3 +3,14 @@ GET http://localhost:3000/library
 ###
 
 GET http://localhost:3000/library/1
+
+###
+
+POST http://localhost:3000/library
+Content-Type: application/json
+
+{
+    "title": "Title Comes Here",
+    "author": "Author of This Book",
+    "isPublished": false
+}

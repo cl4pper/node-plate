@@ -9,11 +9,6 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    tags: [ String ],
-    date: {
-        type: Date,
-        default: Date.now
-    },
     isPublished: Boolean
 })
 

@@ -19,7 +19,19 @@ router.get('/library/:id', (req, res) => {
 })
 
 // CREATING ONE
-router.post('/', (req, res) => {})
+router.post('/library', async (req, res) => {
+    const book = new Library({
+        title: req.body.title,
+        author: req.body.author,
+        isPublished: req.body.isPublished
+    })
+    try {
+        const newBook = await book.save()
+        res.status(201).json(newBook)
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
+})
 
 // UPDATING ONE
 router.patch('/:id', (req, res) => {})
