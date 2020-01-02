@@ -8,6 +8,9 @@ const mongoose = require('mongoose')
 // LOCAL VARIABLES
 const PORT = 3000
 
+// ROUTES
+const STOCK_ROUTE = require('./routes/stock')
+
 // MONGODB CONFIG. ---------------------------- START
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to mongodb...'))
@@ -16,7 +19,6 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 
 server.use(express.json())
 
-const libraryRoute = require('./routes/library')
-server.use('/', libraryRoute)
+server.use('/', STOCK_ROUTE)
 
 server.listen(PORT, () => { console.log('Server is running on PORT:', PORT) })

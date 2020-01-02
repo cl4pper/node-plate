@@ -1,16 +1,17 @@
-GET http://localhost:3000/library
+GET http://localhost:3000/api/stock
 
 ###
 
-GET http://localhost:3000/library/1
+GET http://localhost:3000/api/stock/5e0e33c0ccfbec2ae6356bb6
 
 ###
 
-POST http://localhost:3000/library
+POST http://localhost:3000/api/stock
 Content-Type: application/json
 
 {
-    "title": "Title Comes Here",
-    "author": "Author of This Book",
-    "isPublished": false
+    "name": "Schoolbag",
+    "quantity": 10,
+    "price": 2.90,
+    "stockTo": "shop"
 }
