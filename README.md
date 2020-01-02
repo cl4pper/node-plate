@@ -1,6 +1,6 @@
 # mini-server
 
-A [Node](https://nodejs.org/en/) mini-server to run simple pages or start to build your own API.
+A [Node](https://nodejs.org/en/) boilerplate to server webpages or start to build your own API.
 
 ## Packages:
 
