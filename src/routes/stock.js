@@ -35,10 +35,19 @@ router.post('/api/stock', async (req, res) => {
     }
 })
 
+// DELETING ONE
+router.delete('/api/stock/:id', async (req, res) => {
+    try {
+        const foundItem = await Stock.findOne({ _id: req.params.id })
+        await foundItem.delete()
+        res.status(200).json({ message: 'Item deleted.' })
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
+})
+
 // UPDATING ONE
 router.patch('/:id', (req, res) => {})
 
-// DELETING ONE
-router.delete('/:id', (req, res) => {})
 
 module.exports = router
