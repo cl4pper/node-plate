@@ -16,3 +16,14 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/api/stock/5e111f747cf4e00654adab31
+
+###
+PATCH http://localhost:3000/api/stock/5e0e3494a857ff303dd3eb0f
+Content-Type: application/json
+
+{
+    "name": "School Bag",
+    "quantity": 21,
+    "price": 89.90,
+    "stockTo": "shop"
+}

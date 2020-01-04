@@ -40,7 +40,7 @@ router.delete('/api/stock/:id', async (req, res) => {
     const foundItem = await Stock.findOne({ _id: req.params.id })
 
     if (!foundItem) {
-        console.log('Item NOT found!')
+        console.log('Item NOT found! -> to delete')
         return
     }
 
@@ -53,7 +53,21 @@ router.delete('/api/stock/:id', async (req, res) => {
 })
 
 // UPDATING ONE
-router.patch('/:id', (req, res) => {})
+router.patch('/api/stock/:id', async (req, res) => {
+    const foundItem = await Stock.findOne({ _id: req.params.id })
+
+    if (!foundItem) {
+        console.log('Item NOT found -> to update')
+        return
+    }
+
+    try {
+        await Stock.updateOne({ _id: req.params.id }, { $set: { ...req.body } })
+        res.status(200).json({ message: 'Item updated.' })
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
+})
 
 
 module.exports = router
