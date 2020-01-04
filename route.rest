@@ -1,17 +1,18 @@
 GET http://localhost:3000/api/stock
 
 ###
-
-GET http://localhost:3000/api/stock/5e0e33c0ccfbec2ae6356bb6
+GET http://localhost:3000/api/stock/5e0e3494a857ff303dd3eb0f
 
 ###
-
 POST http://localhost:3000/api/stock
 Content-Type: application/json
 
 {
-    "name": "Schoolbag",
-    "quantity": 10,
-    "price": 2.90,
+    "name": "Shoes",
+    "quantity": 5,
+    "price": 100.90,
     "stockTo": "shop"
 }
+
+###
+DELETE http://localhost:3000/api/stock/5e0e3472a857ff303dd3eb0e
