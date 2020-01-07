@@ -4,6 +4,7 @@
   "description": "A mini server to run simple pages",
   "main": "server.js",
   "scripts": {
+    "postinstall": "link-module-alias",
     "server": "nodemon src/server.js",
     "test": "jest --config ./jest.config.json",
     "testing": "jest --watchAll --config ./jest.config.json"
@@ -17,6 +18,11 @@
   },
   "devDependencies": {
     "jest": "^24.9.0",
+    "link-module-alias": "^1.2.0",
     "supertest": "^4.0.2"
+  },
+  "_moduleAliases": {
+    "~routes": "./src/routes",
+    "~models": "./src/models"
   }
 }

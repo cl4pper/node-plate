@@ -9,7 +9,7 @@ const mongoose = require('mongoose')
 const PORT = 3000
 
 // ROUTES
-const STOCK_ROUTE = require('./routes/stock')
+const STOCK_ROUTE = require('~routes/stock')
 
 // MONGODB CONFIG. ---------------------------- START
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })

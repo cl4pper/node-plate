@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Stock = require('../models/item')
+const Stock = require('~models/item')
 
 // GET ALL
 router.get('/api/stock', async (req, res) => {
