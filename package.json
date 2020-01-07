@@ -4,8 +4,9 @@
   "description": "A mini server to run simple pages",
   "main": "server.js",
   "scripts": {
+    "server": "nodemon src/server.js",
     "test": "jest --config ./jest.config.json",
-    "server": "nodemon src/server.js"
+    "testing": "jest --watchAll --config ./jest.config.json"
   },
   "author": "cl4pper@gmail.com",
   "license": "ISC",
