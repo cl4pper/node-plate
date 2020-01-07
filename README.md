@@ -2,11 +2,14 @@
 
 A [Node](https://nodejs.org/en/) boilerplate to server webpages or start to build your own API.
 
+
 ## Packages:
 
 - [Express](https://github.com/expressjs/express)
 - [Dotenv](https://github.com/motdotla/dotenv)
 - [Mongoose](https://github.com/Automattic/mongoose)
+- [Jest](https://github.com/facebook/jest)
+- [Supertest](https://github.com/visionmedia/supertest)
 
 
 ## Instructions:
