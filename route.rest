@@ -11,19 +11,32 @@ Content-Type: application/json
     "name": "Shoes",
     "quantity": 5,
     "price": 100.90,
-    "stockTo": "shop"
+    "stockTo": "shop",
+    "brand": "5e179115ed3d1120dab2eb49"
 }
 
 ###
-DELETE http://localhost:3000/api/stock/5e111f747cf4e00654adab31
+DELETE http://localhost:3000/api/stock/5e1792a809481e24043c3e79
 
 ###
 PATCH http://localhost:3000/api/stock/5e0e3494a857ff303dd3eb0f
 Content-Type: application/json
 
 {
-    "name": "School Bag",
+    "name": "FreeRn",
     "quantity": 21,
     "price": 89.90,
     "stockTo": "shop"
+}
+
+###
+GET http://localhost:3000/api/brand
+
+###
+POST http://localhost:3000/api/brand
+Content-Type: application/json
+
+{
+    "name": "Adidas",
+    "origin": "Germany"
 }
