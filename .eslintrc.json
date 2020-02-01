@@ -1,0 +1,32 @@
+{
+	"plugins": ["jest"],
+	"env": {
+		"node": true,
+		"commonjs": true,
+		"es6": true,
+		"jest": true
+	},
+	"extends": "eslint:recommended",
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parserOptions": {
+		"ecmaVersion": 2018
+	},
+	"rules": {
+		"object-curly-newline": [
+			"error",
+			{
+				"ObjectExpression": "always",
+				"ObjectPattern": { "multiline": true },
+				"ImportDeclaration": "never",
+				"ExportDeclaration": { "multiline": true, "minProperties": 2 }
+			}
+		],
+		"indent": ["error", "tab"],
+		"semi": [2, "always"],
+		"quotes": ["error", "single"],
+		"max-len": ["error", { "code": 100, "tabWidth": 2 }]
+	}
+}
