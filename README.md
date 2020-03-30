@@ -1,6 +1,6 @@
-# mini-server
+# node-plate
 
-A [Node](https://nodejs.org/en/) boilerplate to server webpages or start to build your own API.
+A boilerplate to start building your own [Node](https://nodejs.org/en/) project.
 
 
 ## Packages:
